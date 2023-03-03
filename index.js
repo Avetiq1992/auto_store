@@ -35,20 +35,22 @@ app.use(express.static('public'))
 
 app.use('/brands/:id',(req,res)=>{
     const id = req.params.id
-  res.json(getBrandsById(id))
+    const models= getBrandsById(id)
+    res.json(models)
 })
 
 
 function getBrandsById(id){
-    console.log(id);
-    const data =[{id:models.filter(function(items){
-      if(items.brandId == 3){
-         console.log(items.name);
-        
-      }
-    }),name: 'camry'}]
+    // console.log(id);
+    // const data =[{id:models.filter(function(items){
+    //   if(items.brandId == 3){
+    //      console.log(items.name);
+    //   }
+    // }),name: 'camry'}]
+    //
+    // return `data`
+    return models.filter(item=>item.brandId===id)
 
-    return data
 }
 
 app.use('/*',(req,res)=>{
