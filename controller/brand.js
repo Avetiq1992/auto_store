@@ -1,4 +1,5 @@
 const Brand = require('../models/brand-car')
+const brands= require('../data/brands.json')
 
 async function getBrand(req,res){
     const brands = await Brand.getAll()
@@ -12,7 +13,9 @@ async function getBrand(req,res){
 
 
 async function getAddCar(req,res){
+    console.log('brands',brands)
     res.render('add', {
+        brands: brands,
         title: 'Add car',
         isAdd: true
     })
@@ -29,7 +32,7 @@ async function createCar(req,res){
 
     try{
         const brandCar = new Brand(make,model,year,price)
-        await brandCar.save()    
+        await brandCar.save()
     }catch(e){
         console.error(e)
     }
