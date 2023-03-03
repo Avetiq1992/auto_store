@@ -8,7 +8,9 @@
         <div class='form-field '>
             <label for='make'>Brand</label>
             <select id='make' name="make" class='form-control'>
-                <option ></option>
+                {{#each brands}}
+                    <option value="${{id}}" >{{name}}</option>
+                {{/each}}
             </select>
         </div>
 
