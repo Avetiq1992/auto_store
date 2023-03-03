@@ -1,0 +1,47 @@
+<h1>Add new car</h1>
+
+
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet" />
+<form action="/brand/add" method="POST">
+    <div class="dropdownMenus col-md-3">
+       
+        <div class='form-field '>
+            <label for='make'>Brand</label>
+            <select id='make' name="make" class='form-control'>
+                <option >{{}}</option>
+            </select>
+        </div>
+        
+        <div class='form-field'>
+            <label for='model'>Model</label>
+            <select id='model' name="model" class='form-control'>
+                <option>Model</option>
+            </select>
+        </div>
+
+        <div class='form-field'>
+            <label for='year'>Year</label>
+            <select id='year' name="year" class='form-control'>
+                <option>Year</option>
+            </select>
+        </div>
+
+        <div class='form-field'>
+            <label for='price'>Price</label>
+            <select id='price' name="price" class='form-control'>
+                <option>Price</option>
+            </select>
+        </div>
+
+        <div class="file-field input-field">
+            <div class="btn">
+                <span>Image</span>
+                <input type="file" name="avatar">
+            </div>
+            <div class="file-path-wrapper">
+                <input class="file-path validate" type="text">
+            </div>
+        </div>
+
+        <button class="btn btn-primary">Add car</button>
+</form>

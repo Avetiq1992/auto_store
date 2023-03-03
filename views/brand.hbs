@@ -1,0 +1,26 @@
+<h1>Car </h1>
+
+{{#if brands.length}}
+{{#each brands}}
+<div class="row">
+    <div class="col s6 offset-s3">
+        <div class="card">
+            <div class="card-image">
+                <img src="images/sample-1.jpg">
+            </div>
+            <div class="card-content">
+                <span class="card-title">{{make}}</span>
+                <p class="model">{{model}}</p>
+                <p class="year">{{year}}</p>
+                <p class="price">{{price}}</p>
+            </div>
+            <div class="card-action">
+                <a href="/brands/{{id}}">Open</a>
+            </div>
+        </div>
+    </div>
+</div>
+{{/each}}
+{{else}}
+<p>no cars yet</p>
+{{/if}}
