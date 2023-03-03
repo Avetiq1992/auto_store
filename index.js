@@ -32,6 +32,19 @@ app.use('/brand',brandsRoutes)
 
 app.use(express.static('public'))
 
+app.use('/brands/:id',(req,res)=>{
+    const id = req.params.id
+  res.json(getBrandsById(id))
+})
+
+
+function getBrandsById(id){
+    console.log(id);
+    const data =[{id:1,name: 'camry'}]
+
+    return data
+}
+
 app.use('/*',(req,res)=>{
   res.json({'status':404})
 })
