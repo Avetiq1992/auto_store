@@ -1,5 +1,14 @@
-function getModels(selectObject) {
-    let value = selectObject.value;
+document.addEventListener("DOMContentLoaded", () => {
+    const select = document.getElementById('make');
+    if(select){
+        select.addEventListener('change',function () {
+            getModels(select.value)
+        })
+    }
+});
+
+
+function getModels(value) {
     let selectModel = document.getElementById('model');
     fetch("/model/"+value)
         .then((response) => response.json())
